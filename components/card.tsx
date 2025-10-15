@@ -22,6 +22,10 @@ export default function Card({ id, imageSrc, author, date, price, title, descrip
         router.push(`/event/${id}`);
     };
 
+    const paymentService = () => {
+        router.push(`/payment/${id}`);
+    };
+
     return(
         <div className="w-full max-w-md bg-white border border-gray-200 overflow-hidden h-[570px]">
             <div className="relative w-full h-[280px]">
@@ -57,7 +61,7 @@ export default function Card({ id, imageSrc, author, date, price, title, descrip
                 </p>
 
                 <div className="flex gap-2 absolute bottom-5 left-4 right-4">
-                    <Button className="flex-1 bg-[#E94D42] hover:bg-[#d43d32] text-white rounded-none font-bold h-[50px]">
+                    <Button className="flex-1 bg-[#E94D42] hover:bg-[#d43d32] text-white rounded-none font-bold h-[50px]" onClick={paymentService}>
                         Записаться <Image src="/arrow-up-right-white.svg" alt="Logo" width={20} height={20} />
                     </Button>
                     <Button variant="outline" className="flex-1 rounded-none font-bold h-[50px]" onClick={handleLearnMore}>
