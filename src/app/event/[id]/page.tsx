@@ -72,6 +72,10 @@ export default function EventPage({ params }: EventPageProps) {
         router.back();
     };
 
+    const handleGoToPayment = () => {
+        router.push(`/payment/${event.id}`);
+    };
+
     return (
         <div className="min-h-screen bg-gray-50">
             <div className="container mx-auto px-4 py-8">
@@ -142,7 +146,10 @@ export default function EventPage({ params }: EventPageProps) {
                         )}
 
                         <div className="flex gap-4">
-                            <Button className="flex-1 bg-[#E94D42] hover:bg-[#d43d32] text-white rounded-none font-bold h-[60px] text-lg">
+                            <Button
+                                onClick={handleGoToPayment}
+                                className="flex-1 bg-[#E94D42] hover:bg-[#d43d32] text-white rounded-none font-bold h-[60px] text-lg"
+                            >
                                 Записаться на курс <Image src="/arrow-up-right-white.svg" alt="Logo" width={24} height={24} />
                             </Button>
                         </div>
